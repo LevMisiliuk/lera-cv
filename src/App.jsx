@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import portraitImage from "./assets/lera.jpeg";
 
 const content = {
   uk: {
@@ -320,7 +321,7 @@ export default function App() {
             </div>
             <div className="profile-signature">
               <div className="profile-monogram" aria-hidden="true">
-                <Monogram name={t.name} />
+                <img src={portraitImage} alt={t.name} />
               </div>
               <div className="profile-signature-copy">
                 <p>{t.topbarRight}</p>
