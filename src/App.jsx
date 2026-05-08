@@ -17,7 +17,7 @@ const content = {
     profileLabel: "Позиціонування",
     profileBadge: "Open for Trainee / Junior",
     profileFacts: [
-      { label: "База", value: "Варшава, Польща" },
+      { label: "Локація", value: "Варшава, Польща" },
       { label: "Зараз", value: "Marketing Specialist, COMFY" },
       { label: "Сильна сторона", value: "Партнерські комунікації та запуск промо" },
     ],
