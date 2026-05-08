@@ -9,10 +9,9 @@ const content = {
     switcherLabel: "Мова",
     heroLabel: "Профіль",
     name: "Валерія Місілюк",
-    tagline: "Marketing Specialist з фокусом на промоактивності, партнерські комунікації та digital marketing",
+    tagline: "Marketing Specialist з фокусом на промоактивності, партнерські комунікації",
     intro: [
-      "Працюю на стику координації, комунікації та маркетингового запуску. Маю практичний досвід підготовки промоактивностей, взаємодії з партнерами, постановки задач для креативів і супроводу рекламних кампаній.",
-      "Цікавлюсь performance marketing та Meta Ads, швидко навчаюсь і прагну розвиватись у digital marketing через системний підхід, аналітику та уважність до деталей.",
+      "Працюю на стику координації, комунікації та маркетингових запусків. Маю практичний досвід підготовки промоактивностей, взаємодії з партнерами, постановки задач для креативів і супроводу рекламних кампаній.",
     ],
     profileLabel: "Позиціонування",
     profileBadge: "Open for Trainee / Junior",
@@ -64,24 +63,27 @@ const content = {
       "Adobe Photoshop",
       "Google Docs / Sheets",
       "Word / Outlook",
-      "Аналітичне мислення",
+      "Партнерські комунікації",
       "Комунікація",
       "Командна робота",
       "Робота зі звітністю",
       "Організація процесів",
       "Підготовка ТЗ для креативів",
+      "Підготовка промоактивностей",
+      "Супровід рекламних кампаній",
+      "Маркетингова документація",
     ],
     skillsNote: "Поєдную операційну точність, комунікацію з партнерами та інтерес до performance-напряму.",
     contactLabel: "Контакт",
     contact: [
       { label: "Email", value: "rezunovalera86@gmail.com", href: "mailto:rezunovalera86@gmail.com" },
       { label: "Місто", value: "Варшава, Польща" },
-      { label: "Формат", value: "Онлайн / гібридно / офіс" },
+      { label: "Формат", value: "Онлайн / гібридно" },
     ],
     footerLabel: "Додатково",
-    footerTitle: "Готова зростати у performance marketing та Meta Ads",
+    footerTitle: "Коротко про мене",
     footerText:
-      "Шукаю середовище, де можна поєднати сильну координацію, уважність до аналітики та розвиток у digital-рекламі.",
+      "У роботі для мене важливі ясна комунікація, відповідальність і увага до деталей. Люблю, коли маркетинг поєднує креатив, структуру та зрозумілий результат. Швидко вчусь, системно працюю й комфортно взаємодію з командою та партнерами. Мені близькі проєкти, де цінують ініціативність, порядок у процесах і взаємопідтримку.",
     educationLabel: "Освіта",
     education: [
       "Національний університет фізичного виховання і спорту України (2019 — 2023) — тренер спортивних танців",
@@ -100,7 +102,7 @@ const content = {
       "Звітність і маркетингова документація",
       "Meta Ads / performance marketing",
     ],
-    footerNote: "Відкрита до позицій Trainee / Junior Marketing Manager",
+    footerNote: "",
   },
   en: {
     topbarLeft: "CV / Portfolio",
@@ -175,7 +177,7 @@ const content = {
     contact: [
       { label: "Email", value: "rezunovalera86@gmail.com", href: "mailto:rezunovalera86@gmail.com" },
       { label: "City", value: "Warsaw, Poland" },
-      { label: "Format", value: "Remote / hybrid / office" },
+      { label: "Format", value: "Remote / hybrid" },
     ],
     footerLabel: "Additional",
     footerTitle: "Ready to grow in performance marketing and Meta Ads",
@@ -199,7 +201,7 @@ const content = {
       "Reporting and marketing documentation",
       "Meta Ads / performance marketing",
     ],
-    footerNote: "Open to Trainee / Junior Marketing Manager roles",
+    footerNote: "",
   },
 };
 
@@ -242,8 +244,7 @@ function RevealSection({ children, className = "" }) {
       className={className}
       variants={reveal}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.18 }}
+      animate="visible"
     >
       {children}
     </motion.section>
@@ -315,10 +316,6 @@ export default function App() {
             whileHover={{ y: -6 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
           >
-            <div className="profile-panel-header">
-              <SectionLabel>{t.profileLabel}</SectionLabel>
-              <p className="profile-badge">{t.profileBadge}</p>
-            </div>
             <div className="profile-signature">
               <div className="profile-monogram" aria-hidden="true">
                 <img src={portraitImage} alt={t.name} />
@@ -346,8 +343,7 @@ export default function App() {
               className="experience-list"
               variants={stagger}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
+              animate="visible"
             >
               {t.jobs.map((job) => (
                 <motion.article className="experience-item" key={`${job.company}-${job.dates}`} variants={reveal}>
@@ -370,8 +366,7 @@ export default function App() {
                 className="skills-cloud"
                 variants={stagger}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                animate="visible"
               >
                 {t.skills.map((skill) => (
                   <motion.span
@@ -384,7 +379,6 @@ export default function App() {
                   </motion.span>
                 ))}
               </motion.div>
-              <p className="support-copy">{t.skillsNote}</p>
             </div>
 
             <motion.div
@@ -420,24 +414,21 @@ export default function App() {
             transition={{ duration: 0.35, ease: "easeOut" }}
           >
             <SectionLabel>{t.footerLabel}</SectionLabel>
-            <h3 className="footer-title">{t.footerTitle}</h3>
             <p className="footer-text">{t.footerText}</p>
             <motion.div
               className="footer-line"
               initial={{ scaleX: 0.3, opacity: 0.4 }}
-              whileInView={{ scaleX: 1, opacity: 1 }}
-              viewport={{ once: true }}
+              animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
             />
-            <p className="footer-note">{t.footerNote}</p>
+            {t.footerNote ? <p className="footer-note">{t.footerNote}</p> : null}
           </motion.div>
 
           <motion.div
             className="footer-grid"
             variants={stagger}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="visible"
           >
             <motion.div className="footer-card" variants={reveal} whileHover={{ y: -4 }}>
               <h4>{t.educationLabel}</h4>
