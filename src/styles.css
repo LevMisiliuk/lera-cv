@@ -387,6 +387,22 @@ html[lang="uk"] .footer-card li {
   color: var(--accent);
 }
 
+.experience-company.is-comfy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.company-icon {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #ff8f3b 0%, #ff7a21 38%, #4caf50 40%, #4caf50 100%),
+    #4caf50;
+  box-shadow: 0 0 0 1px rgba(159, 79, 67, 0.18);
+}
+
 .experience-body h2 {
   font-size: clamp(1.9rem, 5vw, 2.45rem);
   line-height: 1;
@@ -440,7 +456,11 @@ html[lang="uk"] .footer-card li {
 }
 
 .contact-card {
-  padding: 1.35rem;
+  width: 100%;
+  max-width: none;
+  align-self: start;
+  height: fit-content;
+  padding: 1.05rem 1.1rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-lg);
   background: var(--surface-strong);
@@ -449,7 +469,7 @@ html[lang="uk"] .footer-card li {
 
 .contact-list {
   display: grid;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .contact-list span {
@@ -619,9 +639,12 @@ html[lang="uk"] .footer-card li {
     padding-top: 4rem;
   }
 
-  .profile-panel,
-  .contact-card {
+  .profile-panel {
     padding: 1.6rem;
+  }
+
+  .contact-card {
+    padding: 1.25rem 1.3rem;
   }
 
   .footer-intro {

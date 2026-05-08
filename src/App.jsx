@@ -84,18 +84,18 @@ const content = {
     footerTitle: "Коротко про мене",
     footerText:
       "У роботі для мене важливі ясна комунікація, відповідальність і увага до деталей. Люблю, коли маркетинг поєднує креатив, структуру та зрозумілий результат. Швидко вчусь, системно працюю й комфортно взаємодію з командою та партнерами. Мені близькі проєкти, де цінують ініціативність, порядок у процесах і взаємопідтримку.",
-    educationLabel: "Освіта",
+    educationLabel: "🎓 Освіта",
     education: [
       "Національний університет фізичного виховання і спорту України (2019 — 2023) — тренер спортивних танців",
       "Дніпровський державний технікум енергетики та інформаційних технологій (2016 — 2018) — економіст",
     ],
-    languagesLabel: "Мови",
+    languagesLabel: "🗣️ Мови",
     languages: [
       "Українська — рідна",
       "Польська — базовий рівень",
       "Англійська — базовий рівень",
     ],
-    directionLabel: "Фокус",
+    directionLabel: "🎯 Фокус",
     direction: [
       "Партнерські комунікації",
       "Промоактивності та запуск кампаній",
@@ -182,19 +182,19 @@ const content = {
     footerLabel: "Additional",
     footerTitle: "Ready to grow in performance marketing and Meta Ads",
     footerText:
-      "Looking for a team where strong coordination, analytical thinking, and digital marketing growth can come together in one role.",
-    educationLabel: "Education",
+      "In my work, clear communication, responsibility, and attention to detail matter most. I enjoy marketing that combines creativity, structure, and measurable results. I learn quickly, work in a systematic way, and collaborate comfortably with both teammates and partners. I am looking for projects where initiative, organized processes, and mutual support are genuinely valued.",
+    educationLabel: "🎓 Education",
     education: [
       "National University of Ukraine on Physical Education and Sport (2019 — 2023) — Sports Dance Coach",
       "Dnipro State Technical School of Energy and Information Technologies (2016 — 2018) — Economist",
     ],
-    languagesLabel: "Languages",
+    languagesLabel: "🗣️ Languages",
     languages: [
       "Ukrainian — Native",
       "Polish — Basic",
       "English — Basic",
     ],
-    directionLabel: "Focus",
+    directionLabel: "🎯 Focus",
     direction: [
       "Partner communication",
       "Promo activities and campaign launches",
@@ -350,7 +350,10 @@ export default function App() {
                   <p className="experience-dates">{job.dates}</p>
                   <div className="experience-body">
                     <h2>{job.title}</h2>
-                    <p className="experience-company">{job.company}</p>
+                    <p className={`experience-company ${job.company === "COMFY" ? "is-comfy" : ""}`}>
+                      {job.company === "COMFY" ? <span className="company-icon" aria-hidden="true" /> : null}
+                      {job.company}
+                    </p>
                     <p className="experience-impact">{job.impact}</p>
                     {job.details ? <p className="experience-detail">{job.details}</p> : null}
                   </div>
